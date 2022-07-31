@@ -1,30 +1,38 @@
-#include<iostream>
+#include <iostream>
+
 using namespace std;
+
+struct Product
+{
+  int id;
+  int weight;
+  float price;
+};
 
 int main()
 {
-    long marks_long;
+  int count=0;
+  cout<<"How many products do you want to enter: ";
+  cin>>count;
+  const int productCount=count;
+  Product pObj[productCount];
+  
+  for(int count=0;count<productCount;count++)
+  {
+    cout<<"Enter the product info in order of id, weight, price: ";
+    cin>>pObj[count].id;
+    cin>>pObj[count].weight;
+    cin>>pObj[count].price;
     
-    cin>>marks_long;
+  }
+  
+   for(int count=0;count<productCount;count++)
+  {
+    cout<<"Product ID: "<<pObj[count].id<<" Product weight: "<<pObj[count].weight<<" Product price: "<<pObj[count].price<<endl;
     
-    cout<<"The value is :: "<<marks_long<<" and the memory size is : "<<sizeof(marks_long)<<endl;
+  }
 
-
-     int marks;
-    cin>>marks;
-    cout<<"The value is :: "<<marks<<" and the memory size is : "<<sizeof(marks)<<endl;
-
-    short marks_short;
-    cin>>marks_short;
-    cout<<"The value is :: "<<marks_short<<" and the memory size is : "<<sizeof(marks_short)<<endl;
-
-    
-    double marks_double;
-    cin>>marks_double;
-    cout<<"The value is :: "<<marks_double<<" and the memory size is : "<<sizeof(marks_double)<<endl;
-
-    float marks_float;
-    cin>>marks_float;
-    cout<<"The value is :: "<<marks_float<<" and the memory size is : "<<sizeof(marks_float)<<endl;
-    return 0;
-};
+cout<<sizeof(pObj);
+  
+  return 0;
+}
